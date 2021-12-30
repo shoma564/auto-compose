@@ -233,6 +233,7 @@ def volu():
             print("\n" + str(b) + "個目のボリューム")
             print("ホスト側のボリュームパスを入力")
             convol1 = input()
+            os.makedirs(convol1, exist_ok=True)
             time.sleep(0.3)
             print("コンテナ側のボリュームパスを入力")
             convol2 = input()
@@ -300,6 +301,7 @@ def res():
         f.write(resop)
         f.close()
         time.sleep(0.3)  
+
 
 def tty():             
     print("\nコンテナのタスクが終了しても、起動したままにしますか？(yes or no)")
