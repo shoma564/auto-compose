@@ -75,12 +75,12 @@ def netall():
                 
             f = open(path, 'a')
             if c == 0:
-                net = "networks:\n  " + str(netname) + ":\n" + "    ipam:\n" + "      driver:default\n      config:\n        - subnet: " + str(netadd) + str(netsub) + "\n"
+                net = "networks:\n  " + str(netname) + ":\n" + "    ipam:\n" + "      driver: default\n      config:\n        - subnet: " + str(netadd) + str(netsub) + "\n"
                 f.write(net)
                 f.close()
                 time.sleep(0.3)
             else:
-                net = "  " + str(netname) + ":\n" + "    ipam:\n" + "      driver:default\n      config:\n        - subnet: " + str(netadd) + str(netsub) + "\n"
+                net = "  " + str(netname) + ":\n" + "    ipam:\n" + "      driver: default\n      config:\n        - subnet: " + str(netadd) + str(netsub) + "\n"
                 f.write(net)
                 f.close()
                 time.sleep(0.3)
