@@ -375,9 +375,9 @@ def dep():
 
             f = open(path, 'a')
             if i == 0:
-                depop = "    depends_on:\n      - " + str(dep) + "\n"  
+                depop = "\n    depends_on:\n      - " + str(depp) + "\n"  
             else:
-                depop = "      - " + str(dep) + "\n"
+                depop = "\n      - " + str(depp) + "\n"
             
             f.write(depop)
             f.close()
