@@ -1,6 +1,9 @@
 import os
 import platform
 import time
+import docpy
+
+
 
 op = platform.system()
 op = op.replace('#','')
@@ -380,6 +383,17 @@ def dep():
             time.sleep(0.3)     
     else:    
      path
+
+def docker():
+    print("dockerのインストールは行っていますか？(yes or no)")
+    doc = input()
+    if doc == "yes":
+        time.sleep(0.3)
+        print("dockerの操作を行います。")
+        docpy.docpy()
+        
+    else:
+        path
 
 #########################################################################################
         
