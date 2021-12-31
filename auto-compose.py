@@ -2,7 +2,6 @@ import os
 import platform
 import time
 import docker
-import docpy
 from pyfiglet import Figlet
 
 
