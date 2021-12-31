@@ -2,7 +2,7 @@ import os
 import platform
 import time
 import docpy
-
+from pyfiglet import Figlet
 
 
 op = platform.system()
@@ -20,14 +20,15 @@ f = open(path, 'w')
 f.write('')
 f.close()
 
-print("\n\n   ##     ##   ##  ######    #####                  ####    #####   ##   ##  ######    #####    #####   #######")
-print("  ####    ##   ##  # ## #   ##   ##                ##  ##  ##   ##  ### ###   ##  ##  ##   ##  ##   ##   ##   #")
-print(" ##  ##   ##   ##    ##     ##   ##               ##       ##   ##  #######   ##  ##  ##   ##  #         ## #")
-print(" ##  ##   ##   ##    ##     ##   ##    ########   ##       ##   ##  #######   #####   ##   ##   #####    ####")
-print(" ######   ##   ##    ##     ##   ##               ##       ##   ##  ## # ##   ##      ##   ##       ##   ## #")
-print(" ##  ##   ##   ##    ##     ##   ##                ##  ##  ##   ##  ##   ##   ##      ##   ##  ##   ##   ##   #")
-print(" ##  ##    #####    ####     #####                  ####    #####   ##   ##  ####      #####    #####   #######")
-print("\n\n1. This tool is not for beginners.")
+
+
+f = Figlet(font='big')
+msg = f.renderText('Auto-compose')
+print(msg)
+
+
+
+print("1. This tool is not for beginners.")
 print("2. Use it to make things easier for the experts.")
 print("3. This tool is OSS\n\n")
 
