@@ -1,6 +1,7 @@
 import os
 import platform
 import time
+import docker
 import docpy
 from pyfiglet import Figlet
 
@@ -385,16 +386,23 @@ def dep():
     else:    
      path
 
+
 def docker():
     print("dockerのインストールは行っていますか？(yes or no)")
     doc = input()
     if doc == "yes":
         time.sleep(0.3)
         print("dockerの操作を行います。")
-        docpy.docpy()
+        docpy()
         
     else:
         path
+
+
+def docpy():
+    cl = docker.from_env()
+    print("docker imageのプルを行います")
+
 
 #########################################################################################
         
