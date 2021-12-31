@@ -145,7 +145,7 @@ def connet():
             if c == 0:
                 net1 = "    networks:\n      " + str(conn) + ":\n"
             else:
-                net1 = "       " + str(conn) + ":\n"
+                net1 = "      " + str(conn) + ":\n"
             f.write(net1)
             f.close()
             time.sleep(0.3)
@@ -158,7 +158,7 @@ def connet():
 
             else:
                 f = open(path, 'a')
-                net2 = "        ipv4_address: " + str(ip) + "\n"  
+                net2 = "       ipv4_address: " + str(ip) + "\n"  
                 f.write(net2)
                 f.close()
                 time.sleep(0.3)
