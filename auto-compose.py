@@ -157,7 +157,7 @@ def connet():
 
             else:
                 f = open(path, 'a')
-                net2 = "       ipv4_address: " + str(ip) + "\n"  
+                net2 = "        ipv4_address: " + str(ip) + "\n"  
                 f.write(net2)
                 f.close()
                 time.sleep(0.3)
