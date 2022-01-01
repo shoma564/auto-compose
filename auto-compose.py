@@ -402,6 +402,19 @@ def docpy():
     print("docker imageのプルを行います")
 
 
+def pri():
+    print("\nコンテナを特権モードで動作させますか？(yes or no)")
+    pri = input()
+    if pri == "yes":
+        f = open(path, 'a')
+        priop = "    privileged: true\n"   
+        f.write(priop)
+        f.close()
+        time.sleep(0.3)
+    else:
+        path    
+
+
 #########################################################################################
         
 try:
@@ -500,6 +513,11 @@ for i in range(connum):
             print("\nエラーを検知しました。再設定を行います。\n")
             dep()
 
+    try:
+        pri()
+    except:
+        print("\nエラーを検知しました。再設定を行います。\n")
+        pri
 
 
 
