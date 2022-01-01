@@ -2,7 +2,6 @@ import os
 import platform
 import time
 import docker
-#from pyfiglet import Figlet
 
 
 op = platform.system()
@@ -20,11 +19,6 @@ f = open(path, 'w')
 f.write('')
 f.close()
 
-
-
-#f = Figlet(font='big')
-#msg = f.renderText('Auto-compose')
-#print(msg)
 print("               _\n    /\        | |\n   /  \  _   _| |_ ___ ______ ___ ___  _ __ ___  _ __   ___  ___  ___\n  / /\ \| | | | __/ _ \______/ __/ _ \| '_ ` _ \| '_ \ / _ \/ __|/ _ \\\n / ____ \ |_| | || (_) |    | (_| (_) | | | | | | |_) | (_) \__ \  __/\n/_/    \_\__,_|\__\___/      \___\___/|_| |_| |_| .__/ \___/|___/\___|\n                                                | |\n                                                |_|")
 
 print("1. This tool is not for beginners.")
@@ -52,6 +46,7 @@ def network():
     
 def netall():            
     for c in range(netnum): 
+        global net
         d = c + 1
         print("\n\n" + str(d) + "個目のネットワーク")
         print("\n指定するネットワークタイプ\n1. none\n2. default\n3. macvlan")
@@ -131,6 +126,8 @@ def netall():
 
 def connet():
     for c in range(netnum):
+
+        
         d = c + 1
         print("\n適用させるネットワーク名(無い場合はnoneと入力)")
         print("\n" + str(d) + "個目")
@@ -412,7 +409,26 @@ def pri():
         f.close()
         time.sleep(0.3)
     else:
-        path    
+        path 
+
+def configcp():
+    if  connum > 1:
+        print("\n作成するコンテナの設定を使いまわしますか？(yes or no)")
+        concp = input()
+        if concp == "yes":
+            print("どの設定をコンテナ毎で固定しない設定にしますか？")
+            print("1. コンテナ名\n2. コンテナイメージ\n3. 適用するネットワークの設定\n4. ipアドレス\n5. 環境変数の設定\n6. 再起動設定\n7. コンテナを起動し続ける\n8. コマンドの設定\n9. 特権モード")
+            print("一文字ずつ入力してください")
+            for i in range(9):
+                e = i + 1
+                print(str(e) + "個目の設定\n")
+                conf = input()
+                
+            
+        else:
+            path
+    else:
+        path   
 
 
 #########################################################################################
