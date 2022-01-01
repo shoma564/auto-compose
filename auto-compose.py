@@ -2,7 +2,7 @@ import os
 import platform
 import time
 import docker
-from pyfiglet import Figlet
+#from pyfiglet import Figlet
 
 
 op = platform.system()
@@ -22,11 +22,10 @@ f.close()
 
 
 
-f = Figlet(font='big')
-msg = f.renderText('Auto-compose')
-print(msg)
-
-
+#f = Figlet(font='big')
+#msg = f.renderText('Auto-compose')
+#print(msg)
+print("               _\n    /\        | |\n   /  \  _   _| |_ ___ ______ ___ ___  _ __ ___  _ __   ___  ___  ___\n  / /\ \| | | | __/ _ \______/ __/ _ \| '_ ` _ \| '_ \ / _ \/ __|/ _ \\\n / ____ \ |_| | || (_) |    | (_| (_) | | | | | | |_) | (_) \__ \  __/\n/_/    \_\__,_|\__\___/      \___\___/|_| |_| |_| .__/ \___/|___/\___|\n                                                | |\n                                                |_|")
 
 print("1. This tool is not for beginners.")
 print("2. Use it to make things easier for the experts.")
