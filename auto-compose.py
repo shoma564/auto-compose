@@ -1,7 +1,8 @@
 import os
 import platform
 import time
-#import docker
+import sys
+import io
 
 
 op = platform.system()
@@ -129,7 +130,7 @@ def netall():
                 f.close()
                 time.sleep(0.3)
 
-connetlist = []
+connetlist = ["\n",]
 def connet():
     global connetlist
     global ipyesno
@@ -235,7 +236,7 @@ def port():
         f.close()
         time.sleep(0.3)
 
-vollist = []
+vollist = ["\n",]
 def volu():
     print("\nボリュームの紐付けを行います。紐付けたいボリューム数を入力してください。(紐付けをしない場合はnone)")    
     global vollist
@@ -267,7 +268,7 @@ def volu():
             f.close()
             time.sleep(0.3)
 
-envlist = []
+envlist = ["\n",]
 def env():
     print("\n環境変数の設定を行います。設定したい変数の数を入力してください。(設定をしない場合はnone)")    
     global envlist
@@ -353,7 +354,7 @@ def tty():
         path
 
 
-comlist = []
+comlist = ["\n",]
 def com():
     print("\nコンテナで実行したいコマンドの数を入力してください。(無い場合は0)")
     global comlist
@@ -401,7 +402,7 @@ def com():
     else:
         path   
  
-deplist = []        
+deplist = ["\n",]        
 def dep():
     print("\nこのコンテナより先に起動させたいコンテナの数を入力してください（特に設定しない場合は0）")
     global deplist
@@ -479,21 +480,64 @@ def configcp():
     print("複数選択する際は、スペース区切りで入力してください。(例：1 3 5)")
     s = list(map(int, input().split()))
     s = str(s)
+
+
+    global connetlist
+    global envlist
+    global comlist
+    global deplist
+            
+    connetlist = str(connetlist)
+    envlist = str(envlist)
+    comlist = str(comlist)
+    deplist = str(deplist)
+        
+    with io.StringIO() as con2o:
+        sys.stdout = con2o    
+        print(''.join(connetlist))
+        con2 = con2o.getvalue()
+        sys.stdout = sys.__stdout__
+    print(con2)
+    
+    con4 = ports
+
+    with io.StringIO() as con5o:
+        sys.stdout = con5o    
+        print(''.join(envlist))
+        con5 = con5o.getvalue()
+        sys.stdout = sys.__stdout__
+
+    with io.StringIO() as con6o:
+        sys.stdout = con6o    
+        print(''.join(vollist))
+        con6 = con6o.getvalue()
+        sys.stdout = sys.__stdout__
+
+    con7 = resop
+    con8 = ttyop
+
+    with io.StringIO() as con9o:
+        sys.stdout = con9o    
+        print(''.join(comlist))
+        con9 = con9o.getvalue()
+        sys.stdout = sys.__stdout__
+
+    with io.StringIO() as con10o:
+        sys.stdout = con10o    
+        print(''.join(deplist))
+        con10 = con10o.getvalue()
+        sys.stdout = sys.__stdout__
+
+
+    con11 = priop
+
             
     ccc = connum - 1
     for n in range(ccc):
         if "1" in s:
             # conname()
             # build()
-            con2 = print(*connetlist, sep = ',')
-            con4 = ports
-            con5 = print(*envlist, sep = ',')
-            con6 = print(*vollist, sep = ',')
-            con7 = resop
-            con8 = ttyop
-            con9 = print(*comlist, sep = ',')
-            con10 = print(*deplist, sep = ',')
-            con11 = priop
+            
             god = str(con2) + str(con4) + str(con5) + str(con6) + str(con7) + str(con8) + str(con9) + str(con10) + str(con11)
             
             f = open(path, 'a')   
