@@ -298,7 +298,7 @@ def res():
 
     while True:
         try:
-    	    if res == 1:
+            if res == 1:
                 f = open(path, 'a')
                 resop = "    restart: on-failure\n"   
                 f.write(resop)
@@ -322,10 +322,10 @@ def res():
                 time.sleep(0.3)  
                 break
 
-	    else:
-	        raise valueError("error!")
+        else:
+            raise valueError("error!")
         except:
-		print("error")
+        print("error")
 
 def tty():             
     print("\nコンテナのタスクが終了しても、起動したままにしますか？(yes or no)")
