@@ -440,10 +440,10 @@ def pri():
 
 def configcp():
     if  connum > 1:
-        print("\n作成するコンテナの設定を使いまわしますか？(yes or no)")
+        print("\n作成する残りのコンテナに作成したコンテナの設定を使いまわしますか？(yes or no)")
         concp = input()
         if concp == "yes":
-            print("どの設定をコンテナ毎で変更する設定にしますか？")
+            print("コンテナ毎で変更する設定を選択してください")
             print("1. コンテナイメージ\n2. 適用するネットワークの設定\n3. ipアドレス\n4. ポートフォワーディング\n5.環境変数の設定\n6. ボリューム設定\n7. 再起動設定\n8. コンテナを起動し続ける\n9. コマンドの設定\n10. 先に起動させたいコンテナ\n11. 特権モード")
             print("複数選択する際は、スペース区切りで入力してください。(例：1 3 5)")
             s = input().split(", ")
@@ -455,6 +455,7 @@ def configcp():
                     build()
                 elif s in "1" and "2":
                     conname()
+                    
                 elif s in "1" and "2" and "3":
                     conname()
                 elif s in "1" and "2" and "3" and "4":
