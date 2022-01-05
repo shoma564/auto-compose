@@ -497,6 +497,9 @@ def configcp():
         sys.stdout = con2o    
         print(''.join(connetlist))
         con2 = con2o.getvalue()
+        con2 = con2.replace('[', '')
+        con2 = con2.replace(']', '')
+        con2 = con2.replace("¥'", '')
         sys.stdout = sys.__stdout__
     print(con2)
     
