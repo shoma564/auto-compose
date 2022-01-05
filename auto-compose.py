@@ -295,27 +295,37 @@ def res():
     res = input()
     res = int(res)
     time.sleep(0.3)
-    if res == 1:
-        f = open(path, 'a')
-        resop = "    restart: on-failure\n"   
-        f.write(resop)
-        f.close()
-        time.sleep(0.3)       
 
-    elif res == 2:
-        f = open(path, 'a')
-        resop = "    restart: always\n"   
-        f.write(resop)
-        f.close()
-        time.sleep(0.3)       
+    while True:
+        try:
+    	    if res == 1:
+                f = open(path, 'a')
+                resop = "    restart: on-failure\n"   
+                f.write(resop)
+                f.close()
+                time.sleep(0.3)
+                break
 
-    elif res == 3:
-        f = open(path, 'a')
-        resop = "    restart: no\n"   
-        f.write(resop)
-        f.close()
-        time.sleep(0.3)  
+            elif res == 2:
+                f = open(path, 'a')
+                resop = "    restart: always\n"   
+                f.write(resop)
+                f.close()
+                time.sleep(0.3)     
+                break
 
+            elif res == 3:
+                f = open(path, 'a')
+                resop = "    restart: no\n"   
+                f.write(resop)
+                f.close()
+                time.sleep(0.3)  
+                break
+
+	    else:
+	        raise valueError("error!")
+        except:
+		print("error")
 
 def tty():             
     print("\nコンテナのタスクが終了しても、起動したままにしますか？(yes or no)")
