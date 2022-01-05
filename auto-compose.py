@@ -216,6 +216,7 @@ def build():
         f.close()
         time.sleep(0.3)
 
+ports = "none"
 def port():
     global ports
     print("\nポートフォワーディングの設定をします。ホスト側のポート番号を入力してください（ポートフォワーディングをしない場合はnone）")
@@ -298,6 +299,7 @@ def env():
             time.sleep(0.3)
 
 
+resop = "none"
 def res():
     print("\nコンテナの自動起動についての設定を行います。\n1. エラーで停止した場合に再起動(on-failure)\n2. 常に再起動(always)\n3. 設定しない\n")
     global resop
@@ -336,6 +338,7 @@ def res():
         except:
             print("error")
 
+ttyop = "none"
 def tty():             
     print("\nコンテナのタスクが終了しても、起動したままにしますか？(yes or no)")
     global ttyop
@@ -457,7 +460,9 @@ def pri():
     else:
         path 
 
+concp = "none"
 def configcpyesno():
+    global concp
     print("\n作成する残りのコンテナに作成したコンテナの設定を使いまわしますか？(yes or no)")
     concp = input()
     if concp == "yes":
@@ -480,7 +485,6 @@ def configcp():
         if "1" in s:
             # conname()
             # build()
-            print("a")
             con2 = print(*connetlist, sep = ',')
             con4 = ports
             con5 = print(*envlist, sep = ',')
@@ -490,6 +494,11 @@ def configcp():
             con9 = print(*comlist, sep = ',')
             con10 = print(*deplist, sep = ',')
             con11 = priop
+            god = str(con2) + str(con4) + str(con5) + str(con6) + str(con7) + str(con8) + str(con9) + str(con10) + str(con11)
+            
+            f = open(path, 'a')   
+            f.write(god)
+            f.close()
                     
         elif s in "1" and "2":
             conname()
@@ -714,14 +723,20 @@ for i in range(connum):
         except:
             print("\nエラーを検知しました。再設定を行います。\n")
 
+    configcpyesno()
+    if concp == "yes":
+        break
+    else:
+        path
 
-    if  connum > 1:            
-        while True:
-            try:
-                configcpyesno()
-                break
-            except:
-                print("\nエラーを検知しました。再設定を行います。\n")
+#    if  connum > 1:            
+#        while True:
+#            try:
+#                configcpyesno()
+#                break
+#            except:
+#                print("\nエラーを検知しました。再設定を行います。\n")
+
 
 
     f = open(path, 'a')
@@ -732,7 +747,6 @@ for i in range(connum):
     b = i + 1    
     print("\n" + str(b) + "個目のコンテナを作成しました\n\n")
 
-configcp()
 
 
 
