@@ -1,7 +1,7 @@
 import os
 import platform
 import time
-import docker
+#import docker
 
 
 op = platform.system()
@@ -123,7 +123,7 @@ def netall():
                 f.close()
                 time.sleep(0.3)
 
-
+connetlist = None
 def connet():
     global connetlist
     for c in range(netnum):
@@ -225,7 +225,7 @@ def port():
         f.close()
         time.sleep(0.3)
 
-
+vollist = None
 def volu():
     print("\nボリュームの紐付けを行います。紐付けたいボリューム数を入力してください。(紐付けをしない場合はnone)")    
     global vollist
@@ -257,6 +257,7 @@ def volu():
             f.close()
             time.sleep(0.3)
 
+envlist = None
 def env():
     print("\n環境変数の設定を行います。設定したい変数の数を入力してください。(設定をしない場合はnone)")    
     global envlist
@@ -279,10 +280,10 @@ def env():
             f = open(path, 'a')
             if i == 0:
                 convolvol = "    environment: \n" + "      - " + str(conenv1) + ":" + str(conenv2) + "\n" 
-                envlist.append(convolvol)  
+                envlist = envlist.append(convolvol)  
             else:
                 convolvol = "\n" + "      - " + str(conenv1) + "=" + str(conenv2) + "\n" 
-                envlist.append(convolvol)
+                envlist = envlist.append(convolvol)
             f.write(convolvol)
             f.close()
             time.sleep(0.3)
@@ -329,6 +330,8 @@ def tty():
     else:
         path
 
+
+comlist = None
 def com():
     print("\nコンテナで実行したいコマンドの数を入力してください。(無い場合は0)")
     global comlist
@@ -376,7 +379,7 @@ def com():
     else:
         path   
  
-        
+deplist = None        
 def dep():
     print("\nこのコンテナより先に起動させたいコンテナの数を入力してください（特に設定しない場合は0）")
     global deplist
