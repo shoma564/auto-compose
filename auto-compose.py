@@ -477,51 +477,47 @@ def configcp():
             
     ccc = connum - 1
     for n in range(ccc):
-                if s in "1" == True:
-                    conname()
-                    build()
-
-                    if netyesorno == "yes":
-                        con2 = print(*connetlist, sep = ',')
-                    else:
-                        path
-                         
-                    con4 = ports
-                    con5 = print(*envlist, sep = ',')
-                    con6 = print(*vollist, sep = ',')
-                    con7 = resop
-                    con8 = ttyop
-                    con9 = print(*comlist, sep = ',')
-                    con10 = print(*deplist, sep = ',')
-                    con11 = priop
+        if "1" in s:
+            # conname()
+            # build()
+            print("a")
+            con2 = print(*connetlist, sep = ',')
+            con4 = ports
+            con5 = print(*envlist, sep = ',')
+            con6 = print(*vollist, sep = ',')
+            con7 = resop
+            con8 = ttyop
+            con9 = print(*comlist, sep = ',')
+            con10 = print(*deplist, sep = ',')
+            con11 = priop
                     
-                elif s in "1" and "2":
-                    conname()
+        elif s in "1" and "2":
+            conname()
                     
-                elif s in "1" and "2" and "3":
-                    conname()
-                elif s in "1" and "2" and "3" and "4":
-                    conname()
-                elif s in "1" and "2" and "3" and "4" and "5":
-                    conname()
-                elif s in "1" and "2" and "3" and "4" and "5" and "6":
-                    conname()
-                elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7":
-                    conname()
-                elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8":
-                    conname()
-                elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9":
-                    conname()
-                elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10":
-                    conname()
-                elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":
-                    conname()
+        elif s in "1" and "2" and "3":
+            conname()
+        elif s in "1" and "2" and "3" and "4":
+            conname()
+        elif s in "1" and "2" and "3" and "4" and "5":
+            conname()
+        elif s in "1" and "2" and "3" and "4" and "5" and "6":
+            conname()
+        elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7":
+            conname()
+        elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8":
+            conname()
+        elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9":
+            conname()
+        elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10":
+            conname()
+        elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":
+            conname()
                  
                  
                     
-                elif s in "2" and "3":
-                    conname()
-                elif s in "2" and "3" and "4":
+        elif s in "2" and "3":
+             conname()
+         elif s in "2" and "3" and "4":
                     conname()
                 elif s in "2" and "3" and "4" and "5":
                     conname()
