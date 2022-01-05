@@ -297,7 +297,7 @@ def res():
     time.sleep(0.3)
 
     while True:
-	try:
+        try:
     	    if res == 1:
                 f = open(path, 'a')
                 resop = "    restart: on-failure\n"   
@@ -324,8 +324,7 @@ def res():
 
 	    else:
 	        raise valueError("error!")
-
-	except:
+        except:
 		print("error")
 
 def tty():             
