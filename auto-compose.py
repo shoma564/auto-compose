@@ -463,24 +463,28 @@ def configcp():
 
 
 #########################################################################################
-        
-try:
-    ver()
-except:
-    print("\nエラーを検知しました。再設定を行います。\n")
-    ver()
 
-try:    
-    network()
-except:
-    print("\nエラーを検知しました。再設定を行います。\n")
-    network()
+while True:     
+    try:
+        ver()
+        break
+    except:
+        print("\nエラーを検知しました。再設定を行います。\n")
+        
+while True:
+    try:    
+        network()
+        break
+    except:
+        print("\nエラーを検知しました。再設定を行います。\n")
 
 if netyesorno == "yes":
-    try:
-        netall()
-    except:
-        netall()
+    while True:
+        try:
+            netall()
+            break
+        except:
+            print("\nエラーを検知しました。再設定を行います。\n")
         
     f = open(path, 'a')
     space = "\n\n"
