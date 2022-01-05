@@ -23,14 +23,20 @@ print("               _\n    /\        | |\n   /  \  _   _| |_ ___ ______ ___ __
 
 print("1. This tool is not for beginners.")
 print("2. Use it to make things easier for the experts.")
-print("3. This tool is OSS\n4. If you want to exit you enter ctrl + Z\n\n")
+print("3. This tool is OSS\n4. If you want to exit you enter ctrl + Z\n\n\n\n")
 
-print("\n\n立ち上げたいコンテナの数")
+
 global connum
-connum = input()
-connum = int(connum)
-time.sleep(0.3)
 
+while True:
+    try:
+        print("\n立ち上げたいコンテナの数")
+        connum = input()
+        connum = int(connum)
+        time.sleep(0.3)
+        break
+    except:
+        print("エラーが検出されました。")
 
 def network():
     print("\nnetworkの設定をしますか？ (yes or no)")
@@ -126,6 +132,7 @@ def netall():
 connetlist = []
 def connet():
     global connetlist
+    global ipyesno
     for c in range(netnum):
 
         
@@ -140,7 +147,7 @@ def connet():
             
             if c == 0:
                 net1 = "    networks:\n      " + str(conn) + ":\n"
-                connetlist.append(net1)
+                connetlist1.append(net1)
             else:
                 net1 = "      " + str(conn) + ":\n"
                 connetlist.append(net1)
@@ -152,9 +159,11 @@ def connet():
             ip = input()
 
             if ip == "none":
+                ipyesno = 0
                 break
 
             else:
+                ipyesno = 1
                 f = open(path, 'a')
                 net2 = "        ipv4_address: " + str(ip) + "\n" 
                 connetlist.append(net2) 
@@ -448,22 +457,44 @@ def pri():
     else:
         path 
 
-def configcp():
-    if  connum > 1:
-        print("\n作成する残りのコンテナに作成したコンテナの設定を使いまわしますか？(yes or no)")
-        concp = input()
-        if concp == "yes":
-            print("コンテナ毎で変更する設定を選択してください")
-            print("1. コンテナイメージ\n2. 適用するネットワークの設定\n3. ipアドレス\n4. ポートフォワーディング\n5.環境変数の設定\n6. ボリューム設定\n7. 再起動設定\n8. コンテナを起動し続ける\n9. コマンドの設定\n10. 先に起動させたいコンテナ\n11. 特権モード")
-            print("複数選択する際は、スペース区切りで入力してください。(例：1 3 5)")
-            s = input().split(", ")
+def configcpyesno():
+    print("\n作成する残りのコンテナに作成したコンテナの設定を使いまわしますか？(yes or no)")
+    concp = input()
+    if concp == "yes":
+        configcp()
+    elif concp == "no":
+        path()
+    else:
+        raise valueError("error!")
             
-            ccc = connum - 1
-            for i in range(ccc):
-                if s in "1":
+        
+def configcp():
+    print("コンテナ毎で変更する設定を選択してください")
+    print("1. コンテナイメージ\n2. 適用するネットワークの設定\n3. ipアドレス\n4. ポートフォワーディング\n5.環境変数の設定\n6. ボリューム設定\n7. 再起動設定\n8. コンテナを起動し続ける\n9. コマンドの設定\n10. 先に起動させたいコンテナ\n11. 特権モード")
+    print("複数選択する際は、スペース区切りで入力してください。(例：1 3 5)")
+    s = list(map(int, input().split()))
+    s = str(s)
+            
+    ccc = connum - 1
+    for n in range(ccc):
+                if s in "1" == True:
                     conname()
                     build()
-                    con2 = print(*connetlist, sep = ',')
+
+                    if netyesorno == "yes":
+                        con2 = print(*connetlist, sep = ',')
+                    else:
+                        path
+                         
+                    con4 = ports
+                    con5 = print(*envlist, sep = ',')
+                    con6 = print(*vollist, sep = ',')
+                    con7 = resop
+                    con8 = ttyop
+                    con9 = print(*comlist, sep = ',')
+                    con10 = print(*deplist, sep = ',')
+                    con11 = priop
+                    
                 elif s in "1" and "2":
                     conname()
                     
@@ -564,16 +595,7 @@ def configcp():
                     conname()
                 elif s in "6" and "7" and "8" and "9" and "10" and "11":
                     conname()
-                
-
-
-
-                
-            
-        else:
-            path
-    else:
-        path   
+                   
 
 
 #########################################################################################
@@ -697,6 +719,13 @@ for i in range(connum):
             print("\nエラーを検知しました。再設定を行います。\n")
 
 
+    if  connum > 1:            
+        while True:
+            try:
+                configcpyesno()
+                break
+            except:
+                print("\nエラーを検知しました。再設定を行います。\n")
 
 
     f = open(path, 'a')
@@ -707,10 +736,20 @@ for i in range(connum):
     b = i + 1    
     print("\n" + str(b) + "個目のコンテナを作成しました\n\n")
 
+configcp()
 
-time.sleep(1)
-print("\ndocker-compose.ymlファイルを" + str(path) + "に作成しました。")
-print("\n\ndocker-compose.yml\n")
-with open(path) as f:
-    yml = f.read()
-print(yml)
+
+
+
+
+
+def final():
+    time.sleep(1)
+    print("\ndocker-compose.ymlファイルを" + str(path) + "に作成しました。")
+    print("\n\ndocker-compose.yml\n")
+    with open(path) as f:
+        yml = f.read()
+    print(yml)
+
+
+final()
