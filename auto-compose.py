@@ -448,6 +448,7 @@ def docpy():
     print("docker imageのプルを行います")
 
 
+priop = "none"
 def pri():
     print("\nコンテナを特権モードで動作させますか？(yes or no)")
     global priop
