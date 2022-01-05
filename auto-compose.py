@@ -125,6 +125,7 @@ def netall():
 
 
 def connet():
+    global connetlist
     for c in range(netnum):
 
         
@@ -139,8 +140,10 @@ def connet():
             
             if c == 0:
                 net1 = "    networks:\n      " + str(conn) + ":\n"
+                connetlist.append(net1)
             else:
                 net1 = "      " + str(conn) + ":\n"
+                connetlist.append(net1)
             f.write(net1)
             f.close()
             time.sleep(0.3)
@@ -153,7 +156,8 @@ def connet():
 
             else:
                 f = open(path, 'a')
-                net2 = "        ipv4_address: " + str(ip) + "\n"  
+                net2 = "        ipv4_address: " + str(ip) + "\n" 
+                connetlist.append(net2) 
                 f.write(net2)
                 f.close()
                 time.sleep(0.3)
@@ -183,6 +187,7 @@ def conname():
 
 def build():
     print("\nDockerfileはインターネットの物を参照しますか？ (yes or no)")
+    global image
     yesorno = input()
     time.sleep(0.3)
     if yesorno == "yes":
@@ -203,6 +208,7 @@ def build():
         time.sleep(0.3)
 
 def port():
+    global ports
     print("\nポートフォワーディングの設定をします。ホスト側のポート番号を入力してください（ポートフォワーディングをしない場合はnone）")
     port = input()
     time.sleep(0.3)
@@ -222,6 +228,7 @@ def port():
 
 def volu():
     print("\nボリュームの紐付けを行います。紐付けたいボリューム数を入力してください。(紐付けをしない場合はnone)")    
+    global vollist
     volnum = input()
     time.sleep(0.3)
     if volnum == "none":
@@ -241,15 +248,18 @@ def volu():
 
             f = open(path, 'a')
             if i == 0:
-                convolvol = "    volumes: \n" + "      - " + str(convol1) + ":" + str(convol2) + "\n"   
+                convolvol = "    volumes: \n" + "      - " + str(convol1) + ":" + str(convol2) + "\n" 
+                vollist.append(convolvol)  
             else:
                 convolvol = "\n" + "      - " + str(convol1) + ":" + str(convol2) + "\n" 
+                vollist.append(convolvol) 
             f.write(convolvol)
             f.close()
             time.sleep(0.3)
 
 def env():
     print("\n環境変数の設定を行います。設定したい変数の数を入力してください。(設定をしない場合はnone)")    
+    global envlist
     envnum = input()
     time.sleep(0.3)
     if envnum == "none":
@@ -268,9 +278,11 @@ def env():
 
             f = open(path, 'a')
             if i == 0:
-                convolvol = "    environment: \n" + "      - " + str(conenv1) + ":" + str(conenv2) + "\n"   
+                convolvol = "    environment: \n" + "      - " + str(conenv1) + ":" + str(conenv2) + "\n" 
+                envlist.append(convolvol)  
             else:
                 convolvol = "\n" + "      - " + str(conenv1) + "=" + str(conenv2) + "\n" 
+                envlist.append(convolvol)
             f.write(convolvol)
             f.close()
             time.sleep(0.3)
@@ -278,6 +290,7 @@ def env():
 
 def res():
     print("\nコンテナの自動起動についての設定を行います。\n1. エラーで停止した場合に再起動(on-failure)\n2. 常に再起動(always)\n3. 設定しない\n")
+    global resop
     res = input()
     res = int(res)
     time.sleep(0.3)
@@ -305,6 +318,7 @@ def res():
 
 def tty():             
     print("\nコンテナのタスクが終了しても、起動したままにしますか？(yes or no)")
+    global ttyop
     tty = input()
     if tty == "yes":
         f = open(path, 'a')
@@ -317,6 +331,8 @@ def tty():
 
 def com():
     print("\nコンテナで実行したいコマンドの数を入力してください。(無い場合は0)")
+    global comlist
+    
     com = input()
     com = int(com)
     time.sleep(0.3)
@@ -325,7 +341,8 @@ def com():
         print("\nコンテナで実行したいコマンドを入力してください")
         comcom = input()
         f = open(path, 'a')
-        comop = "    command: >\n      bash -c'" + str(comcom) + "'"  
+        comop = "    command: >\n      bash -c'" + str(comcom) + "'" 
+        comlist.append(comop) 
         f.write(comop)
         f.close()
         time.sleep(0.3) 
@@ -340,13 +357,16 @@ def com():
             f = open(path, 'a')
 
             if i == 0:
-                comop = "    command: >\n      bash -c'" + str(comcom) + " &&\n"  
+                comop = "    command: >\n      bash -c'" + str(comcom) + " &&\n"
+                comlist.append(comop)  
 
             elif b == com:
                 comop = "      " + str(comcom) + "'"
+                comlist.append(comop)
                 
             else:
                 comop = "      " + str(comcom) + "&&\n"
+                comlist.append(comop)
 
             f.write(comop)
             f.close()
@@ -359,6 +379,7 @@ def com():
         
 def dep():
     print("\nこのコンテナより先に起動させたいコンテナの数を入力してください（特に設定しない場合は0）")
+    global deplist
     dep = input()
     dep = int(dep)
 
@@ -371,9 +392,11 @@ def dep():
 
             f = open(path, 'a')
             if i == 0:
-                depop = "\n    depends_on:\n      - " + str(depp) + "\n"  
+                depop = "\n    depends_on:\n      - " + str(depp) + "\n"
+                deplist.append(depop)  
             else:
                 depop = "\n      - " + str(depp) + "\n"
+                deplist.append(depop)
             
             f.write(depop)
             f.close()
@@ -401,6 +424,7 @@ def docpy():
 
 def pri():
     print("\nコンテナを特権モードで動作させますか？(yes or no)")
+    global priop
     pri = input()
     if pri == "yes":
         f = open(path, 'a')
@@ -416,29 +440,15 @@ def configcp():
         print("\n作成するコンテナの設定を使いまわしますか？(yes or no)")
         concp = input()
         if concp == "yes":
-            print("どの設定をコンテナ毎で固定しない設定にしますか？")
-            print("1. コンテナイメージ\n2. 適用するネットワークの設定\n3. ipアドレス\n4. 環境変数の設定\n5. 再起動設定\n6. コンテナを起動し続ける\n7. コマンドの設定\n8. 特権モード")
-            print("一つずつ選択してください。")
-            for i in range(9):
-                e = i + 1
-                print(str(e) + "個目の設定\n")
-                conf = input()
-                if conf == "1":
-                    print(各コンテナでコンテナイメージの設定を固定しません。)
-                else if conf == "2":
-                    print(各コンテナで適用するネットワークの設定を固定しません。)
-                else if conf == "3":
-                    print(各コンテナでIPアドレスの設定を固定しません。)
-                else if conf == "4":
-                    print(各コンテナで環境変数の設定を固定しません。)
-                else if conf == "5":
-                    print(各コンテナで再起動設定の設定を固定しません。)
-                else if conf == "6":
-                    print(各コンテナでコンテナを起動し続けるの設定を固定しません。)
-                else if conf == "7":
-                    print(各コンテナでコマンドの設定を固定しません。)
-                else if conf == "8":
-                    print(各コンテナで特権モードの設定を固定しません。)
+            print("どの設定をコンテナ毎で変更する設定にしますか？")
+            print("1. コンテナイメージ\n2. 適用するネットワークの設定\n3. ipアドレス\n4. ポートフォワーディング\n5.環境変数の設定\n6. ボリューム設定\n7. 再起動設定\n8. コンテナを起動し続ける\n9. コマンドの設定\n10. 先に起動させたいコンテナ\n11. 特権モード")
+            print("複数選択する際は、スペース区切りで入力してください。(例：1 3 5)")
+            s = input().split(", ")
+            
+            ccc = connum - 1
+
+                
+
 
 
                 
