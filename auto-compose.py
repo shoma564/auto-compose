@@ -497,74 +497,84 @@ time.sleep(0.5)
 for i in range(connum):
     d = i + 1
     print("\n\n\n\n\n" +str(d) + "個目のコンテナの作成を行います。")
-    
-    try:
-        conname()
-    except:
-        print("\nエラーを検知しました。再設定を行います。\n")
-        conname()
 
-    try:    
-        build()
-    except:
-        print("\nエラーを検知しました。再設定を行います。\n")
-        build()
+    while True:
+        try:
+            conname()
+            break
+        except:
+            print("\nエラーを検知しました。再設定を行います。\n")
+
+    while True:
+        try:    
+            build()
+            break
+        except:
+            print("\nエラーを検知しました。再設定を行います。\n")
  
     if netyesorno == "yes":
-        try:
-            connet()
+        while True:
+            try:
+                connet()
+                break
+            except:
+                print("\nエラーを検知しました。再設定を行います。\n")
+    while True:
+        try:    
+            port()
+            break
         except:
             print("\nエラーを検知しました。再設定を行います。\n")
-            connet()
 
-    try:    
-        port()
-    except:
-        print("\nエラーを検知しました。再設定を行います。\n")
-        port()
+    while True:
+        try:
+            volu()
+            break
+        except:
+            print("\nエラーを検知しました。再設定を行います。\n")
 
-    try:
-        volu()
-    except:
-        print("\nエラーを検知しました。再設定を行います。\n")
-        volu()
+    while True:
+        try:
+            env()
+            break
+        except:
+            print("\nエラーを検知しました。再設定を行います。\n")
 
-    try:
-        env()
-    except:
-        print("\nエラーを検知しました。再設定を行います。\n")
-        env()
+    while True:
+        try:    
+            res()
+            break
+        except:
+            print("\nエラーを検知しました。再設定を行います。\n")
 
-    try:    
-        res()
-    except:
-        print("\nエラーを検知しました。再設定を行います。\n")
-        res()
+    while True:
+        try:
+            tty()
+        except:
+            print("\nエラーを検知しました。再設定を行います。\n")
 
-    try:
-        tty()
-    except:
-        print("\nエラーを検知しました。再設定を行います。\n")
-        tty()
-
-    try:    
-        com()
-    except:
-        print("\nエラーを検知しました。再設定を行います。\n")
-        com()
+    while True:
+        try:    
+            com()
+            break
+        except:
+            print("\nエラーを検知しました。再設定を行います。\n")
+     
 
     if connum > 1:
+        while True:
+            try:
+                dep()
+                break
+            except:
+                print("\nエラーを検知しました。再設定を行います。\n")
+
+    while True:
         try:
-            dep()
+            pri()
+            break
         except:
             print("\nエラーを検知しました。再設定を行います。\n")
-            dep()
-
-    try:
-        pri()
-    except:
-        print("\nエラーを検知しました。再設定を行います。\n")
-        pri
 
 
 
