@@ -304,15 +304,15 @@ def res():
                 f.write(resop)
                 f.close()
                 time.sleep(0.3)
-		break
+                break
 
             elif res == 2:
                 f = open(path, 'a')
                 resop = "    restart: always\n"   
                 f.write(resop)
                 f.close()
-                time.sleep(0.3)       
-		break
+                time.sleep(0.3)     
+                break
 
             elif res == 3:
                 f = open(path, 'a')
@@ -320,7 +320,7 @@ def res():
                 f.write(resop)
                 f.close()
                 time.sleep(0.3)  
-		break
+                break
 
 	    else:
 	        raise valueError("error!")
