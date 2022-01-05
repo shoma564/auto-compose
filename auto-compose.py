@@ -516,81 +516,81 @@ def configcp():
                  
                     
         elif s in "2" and "3":
-             conname()
-         elif s in "2" and "3" and "4":
-                    conname()
-                elif s in "2" and "3" and "4" and "5":
-                    conname()
-                elif s in "2" and "3" and "4" and "5" and "6":
-                    conname()
-                elif s in "2" and "3" and "4" and "5" and "6" and "7":
-                    conname()
-                elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8":
-                    conname()
-                elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9":
-                    conname()
-                elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10":
-                    conname()
-                elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":
-                    conname()
-                    
-                    
-                    
-                elif s in "3" and "4":
-                    conname()
-                elif s in "3" and "4" and "5":
-                    conname()
-                elif s in "3" and "4" and "5" and "6":
-                    conname()
-                elif s in "3" and "4" and "5" and "6" and "7":
-                    conname()
-                elif s in "3" and "4" and "5" and "6" and "7" and "8":
-                    conname()
-                elif s in "3" and "4" and "5" and "6" and "7" and "8" and "9":
-                    conname()
-                elif s in "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10":
-                    conname()
-                elif s in "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":              
-                    conname()
-                    
-                elif s in "4" and "5":
-                    conname()
-                elif s in "4" and "5" and "6":
-                    conname()
-                elif s in "4" and "5" and "6" and "7":
-                    conname()
-                elif s in "4" and "5" and "6" and "7" and "8":
-                    conname()
-                elif s in "4" and "5" and "6" and "7" and "8" and "9":
-                    conname()
-                elif s in "4" and "5" and "6" and "7" and "8" and "9" and "10":
-                    conname()
-                elif s in "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":
-                    conname()
+            conname()
+        elif s in "2" and "3" and "4":
+            conname()
+        elif s in "2" and "3" and "4" and "5":
+            conname()
+        elif s in "2" and "3" and "4" and "5" and "6":
+            conname()
+        elif s in "2" and "3" and "4" and "5" and "6" and "7":
+            conname()
+        elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8":
+            conname()
+        elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9":
+            conname()
+        elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10":
+            conname()
+        elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":
+            conname()
+            
+            
+            
+        elif s in "3" and "4":
+            conname()
+        elif s in "3" and "4" and "5":
+            conname()
+        elif s in "3" and "4" and "5" and "6":
+            conname()
+        elif s in "3" and "4" and "5" and "6" and "7":
+            conname()
+        elif s in "3" and "4" and "5" and "6" and "7" and "8":
+            conname()
+        elif s in "3" and "4" and "5" and "6" and "7" and "8" and "9":
+            conname()
+        elif s in "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10":
+            conname()
+        elif s in "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":              
+            conname()
+            
+        elif s in "4" and "5":
+            conname()
+        elif s in "4" and "5" and "6":
+            conname()
+        elif s in "4" and "5" and "6" and "7":
+            conname()
+        elif s in "4" and "5" and "6" and "7" and "8":
+            conname()
+        elif s in "4" and "5" and "6" and "7" and "8" and "9":
+            conname()
+        elif s in "4" and "5" and "6" and "7" and "8" and "9" and "10":
+            conname()
+        elif s in "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":
+            conname()
 
-                elif s in "5" and "6":
-                    conname()    
-                elif s in "5" and "6" and "7":
-                    conname()
-                elif s in "5" and "6" and "7" and "8":
-                    conname()
-                elif s in "5" and "6" and "7" and "8" and "9":
-                    conname()
-                elif s in "5" and "6" and "7" and "8" and "9" and "10":
-                    conname()
-                elif s in "5" and "6" and "7" and "8" and "9" and "10" and "11":
-                    conname()
-                
-                elif s in "6" and "7":
-                    conname()
-                elif s in "6" and "7" and "8":
-                    conname()
-                elif s in "6" and "7" and "8" and "9":
-                    conname()
-                elif s in "6" and "7" and "8" and "9" and "10":
-                    conname()
-                elif s in "6" and "7" and "8" and "9" and "10" and "11":
-                    conname()
+        elif s in "5" and "6":
+            conname()    
+        elif s in "5" and "6" and "7":
+            conname()
+        elif s in "5" and "6" and "7" and "8":
+            conname()
+        elif s in "5" and "6" and "7" and "8" and "9":
+            conname()
+        elif s in "5" and "6" and "7" and "8" and "9" and "10":
+            conname()
+        elif s in "5" and "6" and "7" and "8" and "9" and "10" and "11":
+            conname()
+        
+        elif s in "6" and "7":
+            conname()
+        elif s in "6" and "7" and "8":
+            conname()
+        elif s in "6" and "7" and "8" and "9":
+            conname()
+        elif s in "6" and "7" and "8" and "9" and "10":
+            conname()
+        elif s in "6" and "7" and "8" and "9" and "10" and "11":
+            conname()
                    
 
 
