@@ -123,7 +123,7 @@ def netall():
                 f.close()
                 time.sleep(0.3)
 
-connetlist = None
+connetlist = []
 def connet():
     global connetlist
     for c in range(netnum):
@@ -225,7 +225,7 @@ def port():
         f.close()
         time.sleep(0.3)
 
-vollist = None
+vollist = []
 def volu():
     print("\nボリュームの紐付けを行います。紐付けたいボリューム数を入力してください。(紐付けをしない場合はnone)")    
     global vollist
@@ -257,7 +257,7 @@ def volu():
             f.close()
             time.sleep(0.3)
 
-envlist = None
+envlist = []
 def env():
     print("\n環境変数の設定を行います。設定したい変数の数を入力してください。(設定をしない場合はnone)")    
     global envlist
@@ -331,7 +331,7 @@ def tty():
         path
 
 
-comlist = None
+comlist = []
 def com():
     print("\nコンテナで実行したいコマンドの数を入力してください。(無い場合は0)")
     global comlist
@@ -379,7 +379,7 @@ def com():
     else:
         path   
  
-deplist = None        
+deplist = []        
 def dep():
     print("\nこのコンテナより先に起動させたいコンテナの数を入力してください（特に設定しない場合は0）")
     global deplist
