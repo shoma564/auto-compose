@@ -550,8 +550,10 @@ for i in range(connum):
     while True:
         try:
             tty()
+            break
         except:
             print("\nエラーを検知しました。再設定を行います。\n")
+
 
     while True:
         try:    
