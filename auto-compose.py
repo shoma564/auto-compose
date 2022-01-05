@@ -23,7 +23,7 @@ print("               _\n    /\        | |\n   /  \  _   _| |_ ___ ______ ___ __
 
 print("1. This tool is not for beginners.")
 print("2. Use it to make things easier for the experts.")
-print("3. This tool is OSS\n\n")
+print("3. This tool is OSS\n4. If you want to exit you enter ctrl + Z\n\n")
 
 print("\n\n立ち上げたいコンテナの数")
 global connum
@@ -463,6 +463,7 @@ def configcp():
                 if s in "1":
                     conname()
                     build()
+                    con2 = print(*connetlist, sep = ',')
                 elif s in "1" and "2":
                     conname()
                     
