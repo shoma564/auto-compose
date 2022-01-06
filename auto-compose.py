@@ -291,10 +291,10 @@ def env():
             f = open(path, 'a')
             if i == 0:
                 convolvol = "    environment: \n" + "      - " + str(conenv1) + ":" + str(conenv2) + "\n" 
-                envlist = envlist.append(convolvol)  
+                envlist.append(convolvol)  
             else:
                 convolvol = "\n" + "      - " + str(conenv1) + "=" + str(conenv2) + "\n" 
-                envlist = envlist.append(convolvol)
+                envlist.append(convolvol)
             f.write(convolvol)
             f.close()
             time.sleep(0.3)
@@ -764,12 +764,13 @@ for i in range(connum):
         except:
             print("\nエラーを検知しました。再設定を行います。\n")
 
-    while True:
-        try:
-            env()
-            break
-        except:
-            print("\nエラーを検知しました。再設定を行います。\n")
+    env()
+#    while True:
+#        try:
+#            env()
+#            break
+#        except:
+#            print("\nエラーを検知しました。再設定を行います。\n")
 
     while True:
         try:    
