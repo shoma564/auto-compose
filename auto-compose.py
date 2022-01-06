@@ -268,7 +268,7 @@ def volu():
             f.close()
             time.sleep(0.3)
 
-envlist = ["\n",]
+envlist = []
 def env():
     print("\n環境変数の設定を行います。設定したい変数の数を入力してください。(設定をしない場合はnone)")    
     global envlist
@@ -354,7 +354,7 @@ def tty():
         path
 
 
-comlist = ["\n",]
+comlist = []
 def com():
     print("\nコンテナで実行したいコマンドの数を入力してください。(無い場合は0)")
     global comlist
@@ -402,7 +402,7 @@ def com():
     else:
         path   
  
-deplist = ["\n",]        
+deplist = []        
 def dep():
     print("\nこのコンテナより先に起動させたいコンテナの数を入力してください（特に設定しない場合は0）")
     global deplist
@@ -499,8 +499,14 @@ def configcp():
         con2 = con2o.getvalue()
         con2 = con2.replace('[', '')
         con2 = con2.replace(']', '')
-        con2 = con2.replace("¥'", '')
+        con2 = con2.replace("'", '')
         sys.stdout = sys.__stdout__
+    if con2 == None:
+        con2 = "\n" 
+    else:
+        path
+           
+    con2 = str(con2)
     print(con2)
     
     con4 = ports
@@ -509,14 +515,28 @@ def configcp():
         sys.stdout = con5o    
         print(''.join(envlist))
         con5 = con5o.getvalue()
+        con5 = con5.replace('[', '')
+        con5 = con5.replace(']', '')
+        con5 = con5.replace("'", '')
         sys.stdout = sys.__stdout__
+    if con5 == None:
+        con5 = "\n" 
+    else:
+        path   
 
     with io.StringIO() as con6o:
         sys.stdout = con6o    
         print(''.join(vollist))
         con6 = con6o.getvalue()
+        con6 = con6.replace('[', '')
+        con6 = con6.replace(']', '')
+        con6 = con6.replace("'", '')
         sys.stdout = sys.__stdout__
-
+    if con6 == None:
+        con6 = "\n" 
+    else:
+        path
+        
     con7 = resop
     con8 = ttyop
 
@@ -524,14 +544,27 @@ def configcp():
         sys.stdout = con9o    
         print(''.join(comlist))
         con9 = con9o.getvalue()
+        con9 = con9.replace('[', '')
+        con9 = con9.replace(']', '')
+        con9 = con9.replace("'", '')
         sys.stdout = sys.__stdout__
+    if con9 == None:
+        con9 = "\n" 
+    else:
+        path
 
     with io.StringIO() as con10o:
         sys.stdout = con10o    
         print(''.join(deplist))
         con10 = con10o.getvalue()
+        con10 = con10.replace('[', '')
+        con10 = con10.replace(']', '')
+        con10 = con10.replace("'", '')
         sys.stdout = sys.__stdout__
-
+    if con10 == None:
+        con10 = "\n" 
+    else:
+        path
 
     con11 = priop
 
