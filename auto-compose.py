@@ -575,7 +575,7 @@ def configcp():
             conname()
             build()
             
-            god = "\n\n\n" + str(con2) + str(con4) + str(con5) + str(con6) + str(con7) + str(con8) + str(con9) + str(con10) + str(con11)
+            god = str(con2) + str(con4) + str(con5) + str(con6) + str(con7) + str(con8) + str(con9) + str(con10) + str(con11)
             
             f = open(path, 'a')   
             f.write(god)
