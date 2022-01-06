@@ -488,10 +488,6 @@ def configcp():
     global comlist
     global deplist
             
-    connetlist = str(connetlist)
-    envlist = str(envlist)
-    comlist = str(comlist)
-    deplist = str(deplist)
         
     with io.StringIO() as con2o:
         sys.stdout = con2o    
@@ -500,14 +496,13 @@ def configcp():
         con2 = con2.replace('[', '')
         con2 = con2.replace(']', '')
         con2 = con2.replace("'", '')
+        con2 = con2.replace(",", '')
         sys.stdout = sys.__stdout__
     if con2 == None:
         con2 = "\n" 
     else:
         path
            
-    con2 = str(con2)
-    print(con2)
     
     con4 = ports
 
@@ -518,6 +513,7 @@ def configcp():
         con5 = con5.replace('[', '')
         con5 = con5.replace(']', '')
         con5 = con5.replace("'", '')
+        con5 = con5.replace(",", '')
         sys.stdout = sys.__stdout__
     if con5 == None:
         con5 = "\n" 
@@ -531,6 +527,7 @@ def configcp():
         con6 = con6.replace('[', '')
         con6 = con6.replace(']', '')
         con6 = con6.replace("'", '')
+        con6 = con6.replace(",", '')
         sys.stdout = sys.__stdout__
     if con6 == None:
         con6 = "\n" 
@@ -547,6 +544,7 @@ def configcp():
         con9 = con9.replace('[', '')
         con9 = con9.replace(']', '')
         con9 = con9.replace("'", '')
+        con9 = con9.replace(",", '')
         sys.stdout = sys.__stdout__
     if con9 == None:
         con9 = "\n" 
@@ -560,6 +558,7 @@ def configcp():
         con10 = con10.replace('[', '')
         con10 = con10.replace(']', '')
         con10 = con10.replace("'", '')
+        con10 = con10.replace(",", '')
         sys.stdout = sys.__stdout__
     if con10 == None:
         con10 = "\n" 
@@ -576,6 +575,7 @@ def configcp():
             build()
             
             god = str(con2) + str(con4) + str(con5) + str(con6) + str(con7) + str(con8) + str(con9) + str(con10) + str(con11)
+            god = str(god)
             
             f = open(path, 'a')   
             f.write(god)
