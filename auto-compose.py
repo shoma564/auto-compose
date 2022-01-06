@@ -487,6 +487,8 @@ def configcp():
     global envlist
     global comlist
     global deplist
+    
+    envlist = str(envlist)
             
         
     with io.StringIO() as con2o:
