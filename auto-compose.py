@@ -148,7 +148,7 @@ def connet():
             
             if c == 0:
                 net1 = "    networks:\n      " + str(conn) + ":\n"
-                connetlist1.append(net1)
+                connetlist.append(net1)
             else:
                 net1 = "      " + str(conn) + ":\n"
                 connetlist.append(net1)
@@ -745,6 +745,9 @@ for i in range(connum):
                 break
             except:
                 print("\nエラーを検知しました。再設定を行います。\n")
+
+
+
     while True:
         try:    
             port()
