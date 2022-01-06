@@ -130,7 +130,7 @@ def netall():
                 f.close()
                 time.sleep(0.3)
 
-connetlist = ["\n",]
+connetlist = []
 def connet():
     global connetlist
     global ipyesno
@@ -217,7 +217,7 @@ def build():
         f.close()
         time.sleep(0.3)
 
-ports = "none"
+ports = ""
 def port():
     global ports
     print("\nポートフォワーディングの設定をします。ホスト側のポート番号を入力してください（ポートフォワーディングをしない場合はnone）")
@@ -236,7 +236,7 @@ def port():
         f.close()
         time.sleep(0.3)
 
-vollist = ["\n",]
+vollist = []
 def volu():
     print("\nボリュームの紐付けを行います。紐付けたいボリューム数を入力してください。(紐付けをしない場合はnone)")    
     global vollist
@@ -300,7 +300,7 @@ def env():
             time.sleep(0.3)
 
 
-resop = "none"
+resop = ""
 def res():
     print("\nコンテナの自動起動についての設定を行います。\n1. エラーで停止した場合に再起動(on-failure)\n2. 常に再起動(always)\n3. 設定しない\n")
     global resop
@@ -339,7 +339,7 @@ def res():
         except:
             print("error")
 
-ttyop = "none"
+ttyop = ""
 def tty():             
     print("\nコンテナのタスクが終了しても、起動したままにしますか？(yes or no)")
     global ttyop
@@ -448,7 +448,7 @@ def docpy():
     print("docker imageのプルを行います")
 
 
-priop = "none"
+priop = ""
 def pri():
     print("\nコンテナを特権モードで動作させますか？(yes or no)")
     global priop
@@ -462,7 +462,7 @@ def pri():
     else:
         path 
 
-concp = "none"
+concp = ""
 def configcpyesno():
     global concp
     print("\n作成する残りのコンテナに作成したコンテナの設定を使いまわしますか？(yes or no)")
@@ -572,10 +572,10 @@ def configcp():
     ccc = connum - 1
     for n in range(ccc):
         if "1" in s:
-            # conname()
-            # build()
+            conname()
+            build()
             
-            god = str(con2) + str(con4) + str(con5) + str(con6) + str(con7) + str(con8) + str(con9) + str(con10) + str(con11)
+            god = "\n\n\n" + str(con2) + str(con4) + str(con5) + str(con6) + str(con7) + str(con8) + str(con9) + str(con10) + str(con11)
             
             f = open(path, 'a')   
             f.write(god)
