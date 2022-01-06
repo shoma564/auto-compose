@@ -293,7 +293,7 @@ def env():
                 convolvol = "    environment: \n" + "      - " + str(conenv1) + ":" + str(conenv2) + "\n" 
                 envlist.append(convolvol)  
             else:
-                convolvol = "\n" + "      - " + str(conenv1) + "=" + str(conenv2) + "\n" 
+                convolvol = "      - " + str(conenv1) + "=" + str(conenv2) + "\n" 
                 envlist.append(convolvol)
             f.write(convolvol)
             f.close()
@@ -488,7 +488,6 @@ def configcp():
     global comlist
     global deplist
     
-    envlist = str(envlist)
             
         
     with io.StringIO() as con2o:
