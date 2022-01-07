@@ -474,8 +474,20 @@ def configcpyesno():
     else:
         raise valueError("error!")
             
-        
+god = ""
 def configcp():
+    global god
+    global con2
+    global con3
+    global con4
+    global con5
+    global con6
+    global con7
+    global con8
+    global con9
+    global con10
+    global con11
+    
     print("コンテナ毎で変更する設定を選択してください")
     print("1. コンテナイメージ\n2. 適用するネットワークの設定\n3. ipアドレス\n4. ポートフォワーディング\n5.環境変数の設定\n6. ボリューム設定\n7. 再起動設定\n8. コンテナを起動し続ける\n9. コマンドの設定\n10. 先に起動させたいコンテナ\n11. 特権モード")
     print("複数選択する際は、スペース区切りで入力してください。(例：1 3 5)")
@@ -574,115 +586,164 @@ def configcp():
         if "1" in s:
             conname()
             build()
-            
-            god = str(con2) + str(con4) + str(con5) + str(con6) + str(con7) + str(con8) + str(con9) + str(con10) + str(con11)
-            god = str(god)
-            
-            f = open(path, 'a')   
-            f.write(god)
-            f.close()
+            godtext()            
+
                     
         elif s in "1" and "2":
             conname()
+            
+            godtext()
                     
         elif s in "1" and "2" and "3":
             conname()
+            godtext()
         elif s in "1" and "2" and "3" and "4":
             conname()
+            godtext()
         elif s in "1" and "2" and "3" and "4" and "5":
             conname()
+            godtext()
         elif s in "1" and "2" and "3" and "4" and "5" and "6":
             conname()
+            godtext()
         elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7":
             conname()
+            godtext()
         elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8":
             conname()
+            godtext()
         elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9":
             conname()
+            godtext()
         elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10":
             conname()
+            godtext()
         elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":
             conname()
+            godtext()
                  
                  
                     
         elif s in "2" and "3":
             conname()
+            godtext()
         elif s in "2" and "3" and "4":
             conname()
+            godtext()
         elif s in "2" and "3" and "4" and "5":
             conname()
+            godtext()
         elif s in "2" and "3" and "4" and "5" and "6":
             conname()
+            godtext()
         elif s in "2" and "3" and "4" and "5" and "6" and "7":
             conname()
+            godtext()
         elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8":
             conname()
+            godtext()
         elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9":
             conname()
+            godtext()
         elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10":
             conname()
+            godtext()
         elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":
             conname()
+            godtext()
             
             
             
         elif s in "3" and "4":
             conname()
+            godtext()
         elif s in "3" and "4" and "5":
             conname()
+            godtext()
         elif s in "3" and "4" and "5" and "6":
             conname()
+            godtext()
         elif s in "3" and "4" and "5" and "6" and "7":
             conname()
+            godtext()
         elif s in "3" and "4" and "5" and "6" and "7" and "8":
             conname()
+            godtext()
         elif s in "3" and "4" and "5" and "6" and "7" and "8" and "9":
             conname()
+            godtext()
         elif s in "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10":
             conname()
+            godtext()
         elif s in "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":              
             conname()
+            godtext()
             
         elif s in "4" and "5":
             conname()
+            godtext()
         elif s in "4" and "5" and "6":
             conname()
+            godtext()
         elif s in "4" and "5" and "6" and "7":
             conname()
+            godtext()
         elif s in "4" and "5" and "6" and "7" and "8":
             conname()
+            godtext()
         elif s in "4" and "5" and "6" and "7" and "8" and "9":
             conname()
+            godtext()
         elif s in "4" and "5" and "6" and "7" and "8" and "9" and "10":
             conname()
+            godtext()
         elif s in "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":
             conname()
+            godtext()
 
         elif s in "5" and "6":
-            conname()    
+            conname()
+            godtext()    
         elif s in "5" and "6" and "7":
             conname()
+            godtext()
         elif s in "5" and "6" and "7" and "8":
             conname()
+            godtext()
         elif s in "5" and "6" and "7" and "8" and "9":
             conname()
+            godtext()
         elif s in "5" and "6" and "7" and "8" and "9" and "10":
             conname()
+            godtext()
         elif s in "5" and "6" and "7" and "8" and "9" and "10" and "11":
             conname()
+            godtext()
         
         elif s in "6" and "7":
             conname()
+            godtext()
         elif s in "6" and "7" and "8":
             conname()
+            godtext()
         elif s in "6" and "7" and "8" and "9":
             conname()
+            godtext()
         elif s in "6" and "7" and "8" and "9" and "10":
             conname()
+            godtext()
         elif s in "6" and "7" and "8" and "9" and "10" and "11":
             conname()
+            godtext()
                    
+                   
+def godtext():
+    global god
+    god = str(con2) + str(con4) + str(con5) + str(con6) + str(con7) + str(con8) + str(con9) + str(con10) + str(con11)
+    god = str(god)            
+    f = open(path, 'a')   
+    f.write(god)
+    f.close()
 
 
 #########################################################################################
