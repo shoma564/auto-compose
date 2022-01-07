@@ -586,7 +586,6 @@ def configcp():
             
     ccc = connum - 1
     for n in range(ccc):
-    god = ""
         if "1" in s:
             conname()
             build()
