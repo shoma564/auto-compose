@@ -564,6 +564,9 @@ def configcp():
     else:
         path
 
+
+        
+
     with io.StringIO() as con10o:
         sys.stdout = con10o    
         print(''.join(deplist))
@@ -586,155 +589,59 @@ def configcp():
         if "1" in s:
             conname()
             build()
+            godtext()
+                    
+        if s in "2":
+            build()
+            godtext()
+            
+        if s in "3":
+            conname()
+            connet()
+            godtext()
+
+        if s in "4":
+            conname()
+            port()
+            godtext()
+            
+        if s in "5":
+            conname()
+            env()
+            godtext()
+
+        if s in "6":
+            conname()
+            volu()
+            godtext()
+
+        if s in "7":
+            conname()
+            res()
+            godtext()
+            
+        if s in "8":
+            conname()
+            tty()
             godtext()            
-
+            
                     
-        elif s in "1" and "2":
+        if s in "9":
             conname()
+            com()
+            godtext()
             
+        if s in "10":
+            conname()
+            dep()
+            godtext()
+            
+        if s in "11":
+            conname()
+            pri()
             godtext()
                     
-        elif s in "1" and "2" and "3":
-            conname()
-            godtext()
-        elif s in "1" and "2" and "3" and "4":
-            conname()
-            godtext()
-        elif s in "1" and "2" and "3" and "4" and "5":
-            conname()
-            godtext()
-        elif s in "1" and "2" and "3" and "4" and "5" and "6":
-            conname()
-            godtext()
-        elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7":
-            conname()
-            godtext()
-        elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8":
-            conname()
-            godtext()
-        elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9":
-            conname()
-            godtext()
-        elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10":
-            conname()
-            godtext()
-        elif s in "1" and "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":
-            conname()
-            godtext()
-                 
-                 
-                    
-        elif s in "2" and "3":
-            conname()
-            godtext()
-        elif s in "2" and "3" and "4":
-            conname()
-            godtext()
-        elif s in "2" and "3" and "4" and "5":
-            conname()
-            godtext()
-        elif s in "2" and "3" and "4" and "5" and "6":
-            conname()
-            godtext()
-        elif s in "2" and "3" and "4" and "5" and "6" and "7":
-            conname()
-            godtext()
-        elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8":
-            conname()
-            godtext()
-        elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9":
-            conname()
-            godtext()
-        elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10":
-            conname()
-            godtext()
-        elif s in "2" and "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":
-            conname()
-            godtext()
-            
-            
-            
-        elif s in "3" and "4":
-            conname()
-            godtext()
-        elif s in "3" and "4" and "5":
-            conname()
-            godtext()
-        elif s in "3" and "4" and "5" and "6":
-            conname()
-            godtext()
-        elif s in "3" and "4" and "5" and "6" and "7":
-            conname()
-            godtext()
-        elif s in "3" and "4" and "5" and "6" and "7" and "8":
-            conname()
-            godtext()
-        elif s in "3" and "4" and "5" and "6" and "7" and "8" and "9":
-            conname()
-            godtext()
-        elif s in "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10":
-            conname()
-            godtext()
-        elif s in "3" and "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":              
-            conname()
-            godtext()
-            
-        elif s in "4" and "5":
-            conname()
-            godtext()
-        elif s in "4" and "5" and "6":
-            conname()
-            godtext()
-        elif s in "4" and "5" and "6" and "7":
-            conname()
-            godtext()
-        elif s in "4" and "5" and "6" and "7" and "8":
-            conname()
-            godtext()
-        elif s in "4" and "5" and "6" and "7" and "8" and "9":
-            conname()
-            godtext()
-        elif s in "4" and "5" and "6" and "7" and "8" and "9" and "10":
-            conname()
-            godtext()
-        elif s in "4" and "5" and "6" and "7" and "8" and "9" and "10" and "11":
-            conname()
-            godtext()
-
-        elif s in "5" and "6":
-            conname()
-            godtext()    
-        elif s in "5" and "6" and "7":
-            conname()
-            godtext()
-        elif s in "5" and "6" and "7" and "8":
-            conname()
-            godtext()
-        elif s in "5" and "6" and "7" and "8" and "9":
-            conname()
-            godtext()
-        elif s in "5" and "6" and "7" and "8" and "9" and "10":
-            conname()
-            godtext()
-        elif s in "5" and "6" and "7" and "8" and "9" and "10" and "11":
-            conname()
-            godtext()
-        
-        elif s in "6" and "7":
-            conname()
-            godtext()
-        elif s in "6" and "7" and "8":
-            conname()
-            godtext()
-        elif s in "6" and "7" and "8" and "9":
-            conname()
-            godtext()
-        elif s in "6" and "7" and "8" and "9" and "10":
-            conname()
-            godtext()
-        elif s in "6" and "7" and "8" and "9" and "10" and "11":
-            conname()
-            godtext()
+ 
                    
                    
 def godtext():
@@ -824,13 +731,12 @@ for i in range(connum):
         except:
             print("\nエラーを検知しました。再設定を行います。\n")
 
-    env()
-#    while True:
-#        try:
-#            env()
-#            break
-#        except:
-#            print("\nエラーを検知しました。再設定を行います。\n")
+    while True:
+        try:
+            env()
+            break
+        except:
+            print("\nエラーを検知しました。再設定を行います。\n")
 
     while True:
         try:    
