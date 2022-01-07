@@ -586,57 +586,58 @@ def configcp():
             
     ccc = connum - 1
     for n in range(ccc):
+    god = ""
         if "1" in s:
             conname()
             build()
             godtext()
                     
-        if s in "2":
+        if "2" in s:
             build()
             godtext()
             
-        if s in "3":
+        if "3" in s:
             conname()
             connet()
             godtext()
 
-        if s in "4":
+        if "4" in s:
             conname()
             port()
             godtext()
             
-        if s in "5":
+        if "5" in s:
             conname()
             env()
             godtext()
 
-        if s in "6":
+        if "6" in s:
             conname()
             volu()
             godtext()
 
-        if s in "7":
+        if "7" in s:
             conname()
             res()
             godtext()
             
-        if s in "8":
+        if "8" in s:
             conname()
             tty()
             godtext()            
             
                     
-        if s in "9":
+        if "9" in s:
             conname()
             com()
             godtext()
             
-        if s in "10":
+        if "10" in s:
             conname()
             dep()
             godtext()
             
-        if s in "11":
+        if "11" in s:
             conname()
             pri()
             godtext()
